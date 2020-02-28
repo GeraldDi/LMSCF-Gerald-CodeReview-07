@@ -19,6 +19,7 @@ export class TravelsComponent implements OnInit {
      start:new FormControl('',Validators.required),
      duration:new FormControl('',Validators.required),
      price: new FormControl('',Validators.required),
+     img: new FormControl('',Validators.required),
      // img: new FormControl('',Validators.required),
    });
 
