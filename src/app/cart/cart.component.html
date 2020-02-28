@@ -5,7 +5,7 @@
  <span>{{ item.name }} </span>
  <span> {{ item.price | currency }}</span>
 </div>
-
+<div class="">total price: {{ tprice }}</div>
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
  <div>
