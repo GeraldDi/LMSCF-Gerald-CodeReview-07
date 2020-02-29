@@ -1,4 +1,4 @@
-<div class="container bg-success">
+<div class="bg-success text-center">
    <h2>Our dream destinations:</h2>
 
    <!-- (The specification was not clear for me here. I understood the "The travel page should have a form for inserting info about travels" in a way that the input form for the site owner to add new products should be in this page.)-->
@@ -11,8 +11,8 @@
        <p>Duration: {{ product.duration }}</p>
        <p>Price: {{ product.price }} Euro</p>
        <p><img src="{{ product.img }}" alt=""></p>
-       <div class="align-self-center">  
-         <button class="" (click)="addToCart(product)">Book</button>
+       <div class="align-self-center mb-5">  
+         <button class="bg-secondary" (click)="addToCart(product)">Book now!</button>
       </div>
    </div>
 
