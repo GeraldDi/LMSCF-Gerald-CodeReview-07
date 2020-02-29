@@ -1,65 +1,63 @@
-<h2>Our dream destinations:</h2>
+<div class="container bg-success">
+   <h2>Our dream destinations:</h2>
 
+   <!-- (The specification was not clear for me here. I understood the "The travel page should have a form for inserting info about travels" in a way that the input form for the site owner to add new products should be in this page.)-->
 
+   <div *ngFor="let product of products">
 
-<!-- (The specification was not clear for me here. I understood the "The travel page should have a form for inserting info about travels" in a way that the input form for the site owner to add new products should be in this page.)-->
+       <h3>{{product.name}}</h3>
+       <p>Description: {{ product.description }}</p>
+       <p>Start-date: {{ product.start }}</p>
+       <p>Duration: {{ product.duration }}</p>
+       <p>Price: {{ product.price }} Euro</p>
+       <p><img src="{{ product.img }}" alt=""></p>
+       <div class="align-self-center">  
+         <button class="" (click)="addToCart(product)">Book</button>
+      </div>
+   </div>
 
+   <h2 class="text-center">Input form to add new loctions</h2>	
+   <form [formGroup]="newloc" class="text-center" (ngSubmit)="onSubmit()">
 
-<div *ngFor="let product of products">
+       <div class="contai">
+       <label>
+         Name:<br>
+         <input type="text" formControlName="name">
+       </label>
+      </div>
+      <div class="contai">
+       <label>
+         Description:<br>
+         <input type="text" formControlName="description">
+       </label>
+      </div>
+      <div class="contai">
+       <label>
+         Start-date:<br>
+         <input type="text" formControlName="start">
+       </label>
+      </div>
+      <div class="contai">
+       <label>
+         Duration:<br>
+         <input type="text" formControlName="duration">
+       </label>
+      </div>
+      <div class="contai">
+       <label>
+         Price:<br>
+         <input type="text" formControlName="price">
+       </label>
+      </div>
+      <div class="contai">
+       <label>
+         Img:<br>
+         <input type="text" formControlName="img">
+       </label>
+      </div>
 
-
- <h3>{{product.name}}</h3>
- <p>Description: {{ product.description }}</p>
- <p>Start-date: {{ product.start }}</p>
- <p>Duration: {{ product.duration }}</p>
- <p>Price: {{ product.price }} Euro</p>
- <p><img src="{{ product.img }}" alt=""></p>
- <div class="align-self-center">  
-   <button class="" (click)="addToCart(product)">Book</button>
+      <div>
+       	<input type="submit" class="btn btn-primary" value="Submit" id="sb">
+      </div>
+   </form>
 </div>
-</div>
-
-<h2 class="text-center">Input form to add new loctions</h2>	
-<form [formGroup]="newloc" class="text-center" (ngSubmit)="onSubmit()">
-
- <div class="contai">
- <label>
-   Name:<br>
-   <input type="text" formControlName="name">
- </label>
-</div>
-<div class="contai">
- <label>
-   Description:<br>
-   <input type="text" formControlName="description">
- </label>
-</div>
-<div class="contai">
- <label>
-   Start-date:<br>
-   <input type="text" formControlName="start">
- </label>
-</div>
-<div class="contai">
- <label>
-   Duration:<br>
-   <input type="text" formControlName="duration">
- </label>
-</div>
-<div class="contai">
- <label>
-   Price:<br>
-   <input type="text" formControlName="price">
- </label>
-</div>
-<div class="contai">
- <label>
-   Img:<br>
-   <input type="text" formControlName="img">
- </label>
-</div>
-
-<div>
- 	<input type="submit" class="btn btn-primary" value="Submit" id="sb">
-</div>
-</form>
